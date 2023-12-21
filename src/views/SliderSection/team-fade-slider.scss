@@ -1,0 +1,38 @@
+.swiper-slide {
+  height: 180px;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 1;
+
+  @include media('>=lgphone') {
+    height: 300px;
+  }
+
+  @include media('>=tablet') {
+    height: 400px;
+  }
+
+  @include media('>=desktop') {
+    height: 500px;
+  }
+
+  @include media('>=widescreen') {
+    height: calc(100vh - 80px);
+  }
+}
+
+.overlay {
+  display: none;
+
+  @include media('>=widescreen') {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $main-txt;
+    z-index: 2;
+    opacity: 0;
+  }
+}

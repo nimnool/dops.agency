@@ -1,0 +1,175 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  position: relative;
+  z-index: 1;
+  background-color: $red;
+
+  @include media('>=desktop') {
+    display: grid;
+    grid-template-columns: 200px 1fr 0;
+    align-items: center;
+  }
+
+  &.active {
+
+    .nav-holder {
+      right: 0;
+    }
+
+    .opener {
+      &:after {
+        transform: rotate(45deg);
+        top: calc(50% - 1px);
+      }
+
+      &:before {
+        transform: rotate(-45deg);
+        bottom: calc(50% - 1px);
+      }
+      span {
+        opacity: 0;
+      }
+    }
+  }
+
+  .logo {
+    position: relative;
+    font-weight: 400;
+    font-size: 38px;
+    color: $main-txt;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background-color: $main-txt;
+      bottom: -7px;
+      left: 30px;
+    }
+
+    span {
+
+      &:first-of-type {
+        position: absolute;
+        transform: rotate(-90deg);
+        left: 0;
+        top: 20px;
+      }
+
+      &:last-of-type {
+        padding-left: 30px;
+      }
+    }
+  }
+
+  .opener {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    position: relative;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 2px;
+      left: 5px;
+      top: 15px;
+      background-color: $main-txt;
+      transition: transform .3s ease-in-out, top .3s ease-in-out, bottom .3s ease-in-out;
+    }
+
+    &:before {
+      top: auto;
+      bottom: 15px;
+    }
+
+    @include media('>=desktop') {
+      display: none;
+    }
+
+    span {
+      display: block;
+      width: 40px;
+      height: 2px;
+      background-color: $main-txt;
+      transition: opacity .3s ease-in-out;
+    }
+  }
+
+  .nav-holder {
+    position: absolute;
+    top: 100%;
+    right: -200%;
+    transition: right .3s ease-in-out;
+    width: 100%;
+    background-color: $red;
+    display: grid;
+    justify-content: end;
+
+    @include media('>=desktop') {
+      position: static;
+      grid-template-columns: 3fr 1fr;
+      align-items: center;
+    }
+
+    @include media('>=widescreen') {
+      grid-template-columns: 2fr 1fr;
+      width: auto;
+    }
+  }
+
+  .nav-list {
+    background-color: $red;
+    text-align: right;
+    padding: 20px;
+
+    @include media('>=desktop') {
+      background-color: inherit;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      justify-content: center;
+      text-align: center;
+      padding: 0;
+    }
+
+    @include media('>=widescreen') {
+      grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr;
+    }
+
+    a {
+      color: $main-txt;
+      text-decoration: none;
+      position: relative;
+      transition: color .3s ease-in-out;
+
+      &:hover {
+        color: $white;
+
+        &:after {
+          min-width: 100%;
+        }
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        height: 2px;
+        left: 0;
+        min-width: 0;
+        background-color: $white;
+        transition: left .3s ease-in-out, min-width .3s ease-in-out;
+      }
+    }
+  }
+}
+
+

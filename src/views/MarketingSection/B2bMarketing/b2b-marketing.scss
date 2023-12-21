@@ -1,0 +1,53 @@
+.marketing-wrap {
+  padding: 20px;
+  position: relative;
+  background-color: $red;
+  display: grid;
+
+  @include media('>=widescreen') {
+    min-height: calc(100vh - 80px);
+    z-index: 10;
+  }
+
+  .main-text-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .title-holder {
+    display: flex;
+    justify-content: flex-end;
+
+
+    h2 {
+      text-align: right;
+      font-size: 40px;
+      font-weight: 400;
+      margin: 0;
+      max-width: 835px;
+      line-height: 1;
+
+      @include media('>=tablet') {
+        font-size: 60px;
+      }
+
+      @include media('>=desktop') {
+        font-size: 80px;
+      }
+
+      @include media('>=widescreen') {
+        font-size: 134px;
+      }
+    }
+  }
+
+  .text-holder {
+    max-width: 318px;
+    font-size: 18px;
+
+    @include media('>=desktop') {
+      font-size: 22px;
+    }
+  }
+}

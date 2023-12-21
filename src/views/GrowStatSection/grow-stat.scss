@@ -1,0 +1,135 @@
+.grow-stat-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: $white;
+
+  .grow-stat-item {
+    position: relative;
+    color: $red;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 5px 20px;
+
+    @include media('>=tablet') {
+      font-size: 22px;
+    }
+
+    > * {
+      z-index: 2;
+    }
+
+    &:first-of-type{
+      width: 100%;
+
+      @include media('>=desktop') {
+        justify-content: flex-end;
+        padding-right: 42px;
+      }
+
+      p {
+        max-width: 150px;
+
+        @include media('>=tablet') {
+          max-width: 199px;
+        }
+      }
+    }
+
+    .grow-stat-item-bg {
+      background-color: $main-txt;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &:nth-of-type(2){
+      width: 100%;
+
+      @include media('>=tablet') {
+        width: 70%;
+        padding-left: 50px;
+      }
+
+      @include media('>=desktop') {
+        width: 60%;
+        padding-left: 148px;
+      }
+
+      p {
+        max-width: 150px;
+
+        @include media('>=tablet') {
+          max-width: 149px;
+        }
+      }
+    }
+
+    &:nth-of-type(3) {
+      width: 100%;
+
+      @include media('>=tablet') {
+        padding-left: 119px;
+      }
+
+      p {
+        max-width: 150px;
+
+        @include media('>=tablet') {
+          max-width: 172px;
+        }
+      }
+    }
+
+    &:last-of-type{
+      width: 100%;
+
+      @include media('>=tablet') {
+        width: 50%;
+        padding-left: 50px;
+      }
+
+      @include media('>=desktop') {
+        width: 40%;
+        padding-left: 110px;
+      }
+
+      @include media('>=widescreen') {
+        width: 40%;
+        padding-left: 170px;
+      }
+
+      p {
+        max-width: 150px;
+
+        @include media('>=tablet') {
+          max-width: 162px;
+        }
+      }
+    }
+
+    span {
+      font-size: 65px;
+      font-weight: 400;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .grow-stat-item-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @include media('>=tablet') {
+      width: auto;
+    }
+  }
+}

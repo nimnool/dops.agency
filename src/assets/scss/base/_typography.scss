@@ -1,0 +1,129 @@
+// Typography
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h {
+  font-family: $headings-font-family;
+  font-weight: bold;
+  margin: 0 0 0.5em;
+  color: $headings-color;
+}
+
+h1, .h1 {
+  font-size: 60px;
+  color: #000000;
+  font-family: $font-FiraGO;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+h2, .h2 {
+  font-size: 48px;
+  color: $color-h2;
+  font-family: $font-FiraGO;
+  font-weight: 500;
+  line-height: 58px;
+}
+
+h3, .h3 {
+  font-size: $h3-font-size;
+}
+
+h4, .h4 {
+  font-size: $h4-font-size;
+}
+
+h5, .h5 {
+  font-size: $h5-font-size;
+}
+
+h6, .h6 {
+  font-size: $h6-font-size;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: $base-link-color;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.text-green {
+  color: $color-green-light3;
+}
+
+.decorated-heading {
+  >span {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 3px;
+      background-color: $color-green-light3;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.heading-long-decoration {
+  text-align: center;
+  overflow: hidden;
+  
+  &__text {
+    display: inline-block;
+    position: relative;
+  
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      background-color: $color-gray-light2;
+      height: 1px;
+      width: 100vh;
+      top: 57%;
+      transform: translateY(-50%);
+    }
+
+    &:after {
+      left: calc(100% + 20px);
+    }
+
+    &:before {
+      right: calc(100% + 20px);
+    }
+  }
+}
+
+.info-icon {
+  font-style: normal;
+  
+  &:after {
+    content: $icon-exclamation-circle;
+    font-family: $font-fontawesome;
+  }
+}

@@ -1,0 +1,168 @@
+// forms
+
+form,
+fieldset {
+  margin: 0;
+  padding: 0;
+  border-style: none;
+}
+
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='search'],
+input[type='password'],
+//input[type='url'],
+// input[type='date'],
+textarea {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  box-sizing: border-box;
+  border: 1px solid $form-element-border-color;
+  padding: $form-element-padding;
+
+  // &:hover {
+
+  // }
+
+  &:focus {
+    border-color: $form-element-focus-border-color;
+  }
+
+  @include placeholder {
+    color: $placeholder-color;
+  }
+}
+select {
+  -webkit-border-radius: 0;
+}
+textarea {
+  resize: vertical;
+  vertical-align: top;
+}
+button,
+input[type='button'],
+input[type='reset'],
+input[type='file'],
+input[type='submit'] {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  cursor: pointer;
+}
+.vue-number-input{
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 120px 115px;
+  align-items: center;
+  grid-gap: 20px;
+  justify-content: space-around;
+  > label {
+    display: block;
+    font-size: 11px;
+    color: #9B9B9B;
+    margin-bottom: 0;
+    word-break: break-word;
+    text-align: left;
+    margin-right: 20px;
+  }
+}
+.vue-number-wrap{
+  position: relative;
+}
+.number-input{
+  display: flex !important;
+  position: static !important;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row-reverse;
+  [dir="ltr"] & {
+    flex-flow: wrap-reverse;
+  }
+}
+.number-input--controls>input{
+  padding: 0 !important;
+  font-family: $font-frutiger-75;
+  color: #8E8E8E;
+}
+.number-input__input{
+  width: 40px !important;
+  height: auto;
+  text-align: center;
+  font-size: 12px !important;
+  line-height: 34px !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+.number-input__button{
+  position: static !important;
+  opacity: 1 !important;
+  width: 20px !important;
+  height: 20px;
+  padding: 0;
+  background-color: #EFEFF2 !important;
+  border: none !important;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.number-input__button:hover::after, .number-input__button:hover::before {
+  background: none !important;
+  color: #24704A;
+}
+.number-input__button:before{
+  height: 3px !important;
+  width: 35% !important;
+  background-color: #000;
+  transform: none !important;
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+.number-input__button:after{
+  display: none;
+  transform: none !important;
+}
+.number-input__button:disabled::after, .number-input__button:disabled::before{
+  background: none !important;
+}
+.number-input__button[disabled="disabled"]{
+  pointer-events: none;
+}
+.number-input__button--plus{
+  border-radius: 50% !important;
+  cursor: pointer;
+  &:before{
+    background: none !important;
+    content: $icon-plus !important;
+    font-family: $font-fontawesome;
+    display: block;
+    font-size: 13px;
+    width: 100% !important;
+    height: auto !important;
+    color: #B0B5BF;
+  }
+}
+.number-input__button--minus{
+  border-radius: 50% !important;
+  cursor: pointer;
+  &:before{
+    background: none !important;
+    content: $icon-minus !important;
+    font-family: $font-fontawesome;
+    display: block;
+    font-size: 13px;
+    width: 100% !important;
+    height: auto !important;
+    color: #B0B5BF;
+  }
+}
+.number-input__button:disabled{
+  &:before{
+    opacity: 0.3 !important;
+  }
+  &:hover{
+    &:before {
+      color: #000;
+    }
+  }
+}
+
