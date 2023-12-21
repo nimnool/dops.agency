@@ -55,8 +55,8 @@ export default {
               disableOnInteraction: false
             }"
         >
-          <swiper-slide style="background-image: url('public/images/team-img-1.jpg')" />
-          <swiper-slide style="background-image: url('public/images/team-img-2.jpeg')" />
+          <swiper-slide style="background-image: url('images/team-img-1.jpg')" />
+          <swiper-slide style="background-image: url('images/team-img-2.jpeg')" />
         </swiper>
         <hero-swiper-text />
       </div>
