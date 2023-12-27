@@ -9,6 +9,7 @@ import HiringPage from "@/pages/HiringPage.vue";
 import NotFoundPage from "@/pages/NotFoundPage.vue"
 import AboutUsPage from "@/pages/AboutUsPage.vue";
 import ContactsPage from "@/pages/ContactsPage.vue";
+import store from "@/store";
 
 const routes = [
     { path: '/', component: HomePage },
@@ -28,4 +29,5 @@ const router = createRouter({
 
 const app = createApp(App);
 app.use(router);
+app.use(store);
 app.mount('#app');
